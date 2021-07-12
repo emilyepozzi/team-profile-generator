@@ -1,7 +1,7 @@
 {
   "name": "team-profile-generator",
   "version": "1.0.0",
-  "description": "my server",
+  "description": "creating an app to make profiles for new employees",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,10 +13,13 @@
   "keywords": [
     "["
   ],
-  "author": "emily pozzi",
+  "author": "Emily Pozzi",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/emilyepozzi/team-profile-generator/issues"
   },
-  "homepage": "https://github.com/emilyepozzi/team-profile-generator#readme"
+  "homepage": "https://github.com/emilyepozzi/team-profile-generator#readme",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
 }

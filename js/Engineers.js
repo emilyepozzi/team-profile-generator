@@ -9,3 +9,5 @@ class Engineers extends Employees {
         return "Engineers"
     }
 }
+
+module.exports = Engineers;
