@@ -4,8 +4,8 @@ const inquirer = require('inquirer');
 const generatePage = require
 
 // using user prompts
-const promptUser = () => {
-    return inquirer. prompt ([
+const addManager = () => {
+    return inquirer.prompt ([
         {
             type: 'input',
             name: 'name',
@@ -14,7 +14,7 @@ const promptUser = () => {
                 if (nameInput) {
                     return true;
                 } else {
-                    console.log ('Please enter your name.');
+                    console.log ('Please enter your name');
                     return false; 
                 }
             }
@@ -29,4 +29,31 @@ const promptUser = () => {
                 } else {
                     console.log ('Please enter a valid work ID')
                 }}},
-    ])} 
+                {
+                    type: 'input',
+                    name: 'email',
+                    message: "Please enter the manager's email.",
+                    validate: nameInput => {
+                        if (nameInput ) {
+                            return true;
+                        } else {
+                            console.log ('Please enter an email!')
+                        }
+                    }
+                },
+                {
+                    type: 'input',
+                    name: 'officenumber',
+                    message: "Please enter the manager's email.",
+                    validate: nameInput => {
+                        if (nameInput ) {
+                            return true;
+                        } else {
+                            console.log ('Please enter an email!')
+                        }
+                    }
+                },
+        
+        
+            ]);
+        }
