@@ -2,8 +2,10 @@
 A command-line application that uses inquirer and takes in information about employees and makes an HTML webpage that displays summaries for each person. 
 
 ## Screenshot
+![Preview](./assets/image/screencapture-file-Users-emilypozzi-Desktop-coding-bootcamp-team-profile-generator-dist-index-html-2021-07-21-00_54_28.png)
 
 ## Deployed Application
+[GitHub Repository](https://emilyepozzi.github.io/team-profile-generator/)
 
 # User Story
 ```
