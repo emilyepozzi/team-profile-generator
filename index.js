@@ -1,7 +1,17 @@
-// modules 
+const generateHTML = require('./src/generateHTML');
+
+const Manager = require('./js/Managers');
+const Engineer = require('./js/Engineers');
+const Intern = require('./js/Interns');
+const Employee = require('./js/Employees');
+
 const fs = require('fs'); 
 const inquirer = require('inquirer');
-const generatePage = require
+const generatePage = require("./src/page-template.js")
+ 
+const fs = require('fs'); 
+const inquirer = require('inquirer');
+const teamArray = []; 
 
 // using user prompts
 const addManager = () => {
