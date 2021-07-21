@@ -3,8 +3,8 @@
 }
 
 :root {
-    --primary: lightslategray;
-    --secondary: white;
+    --primary: rgb(54, 110, 167);
+    --secondary: rgb(175, 170, 170);
 }
 
 body {
@@ -14,11 +14,11 @@ body {
 #navbar {
     background-color: var(--primary);
     color: var(--secondary);
-    font-size: 50px;
+    font-size: 65px;
 }
 
 .navbar-brand {
-    font-size: 50px;
+    font-size: 77px;
 }
 
 .card-header {
@@ -32,7 +32,7 @@ body {
 }
 
 .container {
-    margin: 100px auto;
+    margin: 110px auto;
     justify-content: space-evenly;
     display: flex;
     
