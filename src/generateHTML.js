@@ -1,38 +1,94 @@
-const generateManager = function (manager) {
+const generatingManagers = function (managers) {
     return `
     <div class="col-4 mt-4">
         <div class="card h-100">
             <div class="card-header">
-                <h3>${manager.name}</h3>
+                <h3>${managers.name}</h3>
                 <h4>Manager</h4><i class="material-icons">content_paste</i>
             </div>
             <div class="card-body">
-                <p class="id">ID: ${manager.id}</p>
-                <p class="email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
-                <p class="office">Office Number: ${manager.officeNumber}</p>
+                <p class="id">ID: ${managers.id}</p>
+                <p class="email">Email: <a href="mailto:${managers.email}">${managers.email}</a></p>
+                <p class="office">Office Number: ${managers.officeNumber}</p>
             </div>
         </div>
     </div>
     `;
 }
 
-const generateEngineer = function (engineer) {
+const generatingEngineers = function (engineers) {
     return `
     <div class="col-4 mt-4">
         <div class="card h-100">
             <div class="card-header">
-                <h3>${engineer.name}</h3>
+                <h3>${engineers.name}</h3>
                 <h4>Engineer</h4><i class="material-icons">laptop_mac</i>
             </div>
             <div class="card-body">
-                <p class="id">ID: ${engineer.id}</p>
-                <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-                <p class="github">Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
+                <p class="id">ID: ${engineers.id}</p>
+                <p class="email">Email: <a href="mailto:${engineer.email}">${engineers.email}</a></p>
+                <p class="github">Github: <a href="https://github.com/${engineers.github}">${engineers.github}</a></p>
             </div>
         </div>
     </div>
     `
 }
+
+const generatingInterns = function (interns) {
+    return `
+    <div class="col-4 mt-4">
+        <div class="card h-100">
+            <div class="card-header">
+                <h3>${interns.name}</h3>
+                <h4>Intern</h4><i class="material-icons">assignment_ind</i>
+            </div>
+
+            <div class="card-body">
+                <p class="id">ID: ${interns.id}</p>
+                <p class="email">Email:<a href="mailto:${interns.email}">${interns.email}</a></p>
+                <p class="school">School: ${interns.school}</p>
+            </div>
+    </div>
+</div>
+    `
+};
+
+generateHTML = (data) => {
+
+    pageArray = []; 
+
+    for (let i = 0; i < data.length; i++) {
+        const employee = data[i];
+        const role = employee.getRole(); 
+
+
+        if (role === 'Managers') {
+            const managerCard = generatingManagers(employee);
+
+            pageArray.push(managerCard);
+        }
+
+        if (role === 'Engineers') {
+            const engineerCard = generatingEngineers(employee);
+
+            pageArray.push(engineerCard);
+        }
+ 
+        if (role === 'Interns') {
+            const internCard = generatingInterns(employee);
+
+            pageArray.push(internCard);
+        }
+        
+    }
+
+    const employeeCards = pageArray.join('')
+
+    const generateTeam = generateTeamPage(employeeCards); 
+    return generateTeam;
+
+}
+
 const generateTeamPage = function (employeeCards) {   
     return`
     <!DOCTYPE html>
