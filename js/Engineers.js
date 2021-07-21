@@ -1,15 +1,25 @@
-const Employees = require("./Employees");
+// importing Employee constructor 
+const Employee = require("./Employee");
 
-class Engineers extends Employees {
-    constructor (name, id, email, phone) {
+// engineer constructor extends employee constructor 
+class Engineer extends Employee {
+    constructor (name, id, email, github) {
+        // calling employee constructor 
         super (name, id, email);
 
-        this.github = github;
+        this.github = github; 
     }
 
+    // returning github from input 
+    getGithub () {
+        return this.github;
+    }
+
+     // override employee role to engineer
     getRole () {
-        return "Engineers"
+        return "Engineer";
     }
 }
 
-module.exports = Engineers;
+// to be exported 
+module.exports = Engineer; 

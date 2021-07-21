@@ -1,49 +1,31 @@
-const Engineers = require('./Engineers');
-
-test('creates an Engineer object', () => {
-    const engineers = new Engineers('Katie', '15', 'katie@notreal.com', 'katiep15');
-
-    expect(engineers.name)toEqual(expect.any(String));
-    expect(engineers.id).toEqual(expect.any(Number));
-    expect(engineers.email).toEqual(expect.any(String));
-    expect(engineers.phone).toEqual(expect.any(Number));
-});
-
-test('gets role of the employees', () => {
-    const engineers = new Engineers('Katie', '15', 'katie@notreal.com', 'katiep15');
-
-    expect(engineers.getRole()).toEqual("Engineers");
-})
-
-
-
-class Employees {
-    constructor (name, id, email, phone) {
+// employee constructor 
+class Employee {
+    constructor (name, id, email) {
         this.name = name;
         this.id = id;
-        this.email = email;
-        this.phone = phone;
+        this.email = email 
     }
 
+    // returning name from input
     getName () {
         return this.name;
     }
 
+    // returning ID from input
     getId () {
         return this.id;
-    }
+    }   
 
+    // returning email from input
     getEmail () {
         return this.email;
     }
 
-    getPhone () {
-        return this.phone;
-    }
-
+    // returning employee type 
     getRole () {
-        return 'Employees';
+        return 'Employee'; 
     }
 };
 
-module.exports = Employees;
+// to be exported 
+module.exports = Employee; 
