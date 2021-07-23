@@ -1,6 +1,6 @@
-const Manager = require("./lib/Manager");
-const Engineer = require("./lib/Engineer");
-const Intern = require("./lib/Intern");
+const Managers = require("./lib/Managers");
+const Engineers = require("./lib/Engineers");
+const Interns = require("./lib/Interns");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
@@ -67,8 +67,8 @@ function appMenu() {
         }
       }
     ]).then(answers => {
-      const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
-      teamMembers.push(manager);
+      const managers = new Managers(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
+      teamMembers.push(managers);
       idArray.push(answers.managerId);
       createTeam();
     });
@@ -80,17 +80,17 @@ function appMenu() {
         name: "memberChoice",
         message: "Which type of team member would you like to add?",
         choices: [
-          "Engineer",
-          "Intern",
+          "Engineers",
+          "Interns",
           "I don't want to add any more team members"
         ]
       }
     ]).then(userChoice => {
       switch (userChoice.memberChoice) {
-        case "Engineer":
+        case "Engineers":
           addEngineer();
           break;
-        case "Intern":
+        case "Interns":
           addIntern();
           break;
         default:
@@ -155,8 +155,8 @@ function appMenu() {
         }
       }
     ]).then(answers => {
-      const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
-      teamMembers.push(engineer);
+      const engineers = new Engineers(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
+      teamMembers.push(engineers);
       idArray.push(answers.engineerId);
       createTeam();
     });
@@ -218,8 +218,8 @@ function appMenu() {
         }
       }
     ]).then(answers => {
-      const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
-      teamMembers.push(intern);
+      const interns = new Interns(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+      teamMembers.push(interns);
       idArray.push(answers.internId);
       createTeam();
     });
