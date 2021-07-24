@@ -36,3 +36,5 @@ THEN I exit the application, and the HTML is generated
 ```
 
 ## Contributors
+- Joe Young.. Best tutor ever
+- Andy Mendez.. If everyone cared as much as this guy.. The world would be happy.
